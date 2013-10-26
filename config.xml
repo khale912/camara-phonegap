@@ -3,17 +3,13 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.andresjimenezm.ejemplo"
         version   = "1.0.0">
-   <name>Julian Ejemplo</name>
-   <description>APlicacion para el FNA Fondo Nacional de Desarrollo</description>
-   <author href="http://www.andresjimenezm.com" email="contacto@andresjimenezm.com">Andres Jimenez M.</author>
+   <name>Cámara Ejemplo</name>
+   <description>Cámara en local para pasar a un server</description>
    <feature name="http://api.phonegap.com/1.0/network"/>
    <feature name="http://api.phonegap.com/1.0/media"/>
    <feature name="http://api.phonegap.com/1.0/file"/>
    <feature name="http://api.phonegap.com/1.0/notification"/>
    
-   <plugin name="Camera" value="org.apache.cordova.CameraLauncher" />
-   
-
    
    <preference name="target-device" value="universal" />
    <access origin="*" />
@@ -29,4 +25,6 @@
    <gap:splash src="img/inicio.png" gap:platform="android" gap:density="hdpi" />
    
    <feature name="http://api.phonegap.com/1.0/camera"/>
+   <plugin name="Camera" value="org.apache.cordova.CameraLauncher" />
+   
 </widget>

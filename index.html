@@ -25,6 +25,11 @@
   <script type="text/javascript" charset="utf-8" src="js/camara.js"></script>
   <script type="text/javascript" charset="utf-8" src="js/form.js"></script>
 
+  <script type="text/javascript" charset="utf-8" src="animacion_beta_edgePreload.js"></script>
+  <style>
+      .edgeLoad-mi_comp { visibility:hidden; }
+  </style>
+
 </head>
 
 <body>
@@ -82,10 +87,23 @@
           </fieldset>
         </div>
         <textarea id="comment" placeholder="Comentarios adicionales?"></textarea>
-        <a id="photoBtn" data-role="button" onclick="sendInfo()">Tumbarlo ahora!</a>
+        <a id="photoBtn" href="#tumbar" data-role="button" onclick="sendInfo()">Tumbarlo ahora!</a>
       </p>
     </div>
   </div>
+  
+   <!-- Tumba el edificio -->
+  <div data-role="page" class="jqm-demos" data-quicklinks="true" id="tumbar">
+    <div data-role="header" data-theme="a">
+      <h1>El Topo</h1>            
+    </div>
+
+    <div data-role="content">
+      <div id="Stage" class="mi_comp">
+      </div>
+    </div>
+  </div>
+  
 
 </body>
 </html>

@@ -9,14 +9,15 @@ var urlForm = "http://www.aktio.co/eltopo/register.php"
 function takePhoto() {
   navigator.camera.getPicture(onCameraSuccess, onCameraError, {
     quality: 50,
-    destinationType: Camera.DestinationType.DATA_URL
+    destinationType: Camera.DestinationType.FILE_URI
   })
 }
 
 function onCameraSuccess(imageData) {
   console.log(imageData)
   ic = document.getElementById('imageContainer');
-  ic.src = "data:image/jpeg;base64," + imageData;
+  //ic.src = "data:image/jpeg;base64," + imageData;
+  ic.src = imageData;
 
   document.getElementById('photoBtn').value = 'Retomar foto'
   $("#photoBtn").button('refresh')

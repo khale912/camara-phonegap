@@ -1,46 +1,91 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
+
   <title>Topo</title>
+
   <meta charset="utf-8">
   <meta name="viewport" id="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-  <script type="text/javascript" charset="utf-8" src="camara.js"></script>
-  <link href="jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
-  <script src="jquery-1.6.4.min.js" type="text/javascript"></script>
-  <script src="jquery.mobile-1.0.min.js" type="text/javascript"></script>
+  <link rel="stylesheet"  href="css/jquery.mobile-1.3.1.min.css">
+  <link rel="stylesheet" href="css/jqm-demos.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.mobile-1.3.1.min.js"></script>  
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/geolocation.js"></script>
+  <style>
+  html, body, #map-canvas {
+    height: 100%;
+    margin: 0px;
+    padding: 0px
+  }
+  </style>
+  <script type="text/javascript" charset="utf-8" src="js/camara.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/form.js"></script>
+
 </head>
+
 <body>
-  <div data-role="page" id="page1">
+
+  <!-- Pagina geolocation -->
+  <div data-role="page" class="jqm-demos" data-quicklinks="true" id="geolocation">
+    <div data-role="header" data-theme="a">
+      <h1>El Topo</h1>            
+    </div>
+
+    <div data-role="content">
+      <div id="map_canvas">
+      </div>
+      <div id="botones2";style="position: relative; z-index: 10;">
+        <div id="btnubicarmenu">
+          <a href="#takePhoto" data-role="button" data-transition="flip">Estoy acá</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-role="page" id="takePhoto">
     <div data-role="header">
-      <h1>Pero... y la foto?</h1>
+      <h1>El topo</h1>
     </div>
     <div data-role="content">
+      <a id="photoBtn" data-role="button" onclick="takePhoto()">Toma una foto</a>
+      <div>
+        <img id="image" src="" width="100%" />
+        <canvas id="canvas" style="display:none"></canvas>
+        <div id="btnGoToForm"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagina foto -->
+  <div data-role="page" id="form">
+    <div data-role="header">
+      <h1>El topo</h1>
+    </div>
+
+    <div data-role="content">
       <p>
-        <input id="photoBtn" type="button" value="Toma una foto" onclick="takePhoto()"/>
-        <div>
-          <img id="image" src="" width="100%" />
-          <canvas id="canvas" style=""></canvas>
-        </div>
-        <input id="latitude" type="text" placeholder="latitud" />
-        <input id="longitude" type="text" placeholder="longitud" />
         <input type="checkbox" name="license" id="license" class="custom" />
         <label for="license">Tiene licencia visible?</label>
         <div data-role="fieldcontain">
-            <fieldset data-role="controlgroup">
-              <legend>Tipo de construcción:</legend>
-                  <input type="radio" name="construction" id="homeType" value="choice-1" checked="checked" />
-                  <label for="homeType">Residencial</label>
-                  <input type="radio" name="construction" id="buildingType" value="choice-2" />
-                  <label for="buildingType">Edificio</label>
-                  <input type="radio" name="construction" id="mallType" value="choice-3" />
-                  <label for="mallType">Centro comercial</label>
-            </fieldset>
+          <fieldset data-role="controlgroup">
+            <legend>Tipo de construcción:</legend>
+            <input type="radio" name="construction" id="homeType" value="choice-1" checked="checked" />
+            <label for="homeType">Residencial</label>
+            <input type="radio" name="construction" id="buildingType" value="choice-2" />
+            <label for="buildingType">Edificio</label>
+            <input type="radio" name="construction" id="mallType" value="choice-3" />
+            <label for="mallType">Centro comercial</label>
+          </fieldset>
         </div>
-        <textarea id="comment" placeholder="comentarios adicionales"></textarea>
-        <input id="sendBtn" type="button" value="Enviar" onclick="sendInfo()"/>
+        <textarea id="comment" placeholder="Comentarios adicionales?"></textarea>
+        <a id="photoBtn" data-role="button" onclick="sendInfo()">Tumbarlo ahora!</a>
       </p>
     </div>
   </div>
+
 </body>
 </html>

@@ -8,7 +8,7 @@ var urlForm = 'http://www.aktio.co/eltopo/register.php'
 
   function takePhoto() {
     navigator.camera.getPicture(onCameraSuccess, onCameraError, {
-      quality: 50,
+      quality: 10,
       destinationType: Camera.DestinationType.FILE_URI
     })
   }

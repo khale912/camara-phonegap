@@ -9,21 +9,41 @@ var urlForm = "http://www.aktio.co/eltopo/register.php"
 function takePhoto() {
   navigator.camera.getPicture(onCameraSuccess, onCameraError, {
     quality: 50,
-    destinationType: Camera.DestinationType.FILE_URI
+    destinationType: Camera.DestinationType.DATA_URL
   })
 }
 
 function onCameraSuccess(imageData) {
   console.log(imageData)
   ic = document.getElementById('imageContainer');
-  //ic.src = "data:image/jpeg;base64," + imageData;
-  ic.src = imageData;
+  ic.src = "data:image/jpeg;base64," + imageData;
 
   document.getElementById('photoBtn').value = 'Retomar foto'
   $("#photoBtn").button('refresh')
 }
 
 function onCameraError(e) {
+  console.log(e)
+  navigator.notification.alert("onCameraError: " + e)
+}
+
+function takePhoto1() {
+  navigator.camera.getPicture(onCameraSuccess1, onCameraError1, {
+    quality: 50,
+    destinationType: Camera.DestinationType.FILE_URI
+  })
+}
+
+function onCameraSuccess1(imageURL) {
+  console.log(imageURL)
+  ic = document.getElementById('imageContainer1');
+  ic.src = imageURL;
+
+  document.getElementById('photoBtn1').value = 'Retomar foto'
+  $("#photoBtn1").button('refresh')
+}
+
+function onCameraError1(e) {
   console.log(e)
   navigator.notification.alert("onCameraError: " + e)
 }

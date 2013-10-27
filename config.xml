@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.andresjimenezm.ejemplo"
+        id        = "com.angelhack.topo"
         version   = "1.0.0">
+		
    <name>Cámara Ejemplo</name>
    <description>Cámara en local para pasar a un server</description>
    <feature name="http://api.phonegap.com/1.0/network"/>
@@ -13,17 +14,8 @@
    
    <preference name="target-device" value="universal" />
    <access origin="*" />
-   <!-- Icons -->
-   <icon src="icon.png" width="64" height="64" gap:role="default" />
-   <icon src="img/icotaxi.png" width="72" height="72" gap:platform="android" gap:density="hdpi" />
-   <icon src="img/icotaxi.png" width="96" height="96" gap:platform="android" gap:density="xhdpi" />
-   <icon src="img/icotaxi.png" width="72" height="72" gap:platform="ios" />
-   <!-- Splash Screens -->
-   <gap:splash src="img/inicio.png" />
-   <gap:splash src="img/inicio.png" gap:platform="android" gap:density="ldpi" />
-   <gap:splash src="simg/inicio.png" gap:platform="android" gap:density="mdpi" />
-   <gap:splash src="img/inicio.png" gap:platform="android" gap:density="hdpi" />
    
+   <!-- Permisos para la cámara-->
    <feature name="http://api.phonegap.com/1.0/camera"/>
    <plugin name="Camera" value="org.apache.cordova.CameraLauncher" />
    

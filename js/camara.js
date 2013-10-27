@@ -1,7 +1,8 @@
 // JavaScript Document
 
   function takePhoto() {
-    onCameraSuccess("images/test.jpeg");
+    // Este es para probar en local
+    //onCameraSuccess("images/test.jpeg");
     navigator.camera.getPicture(onCameraSuccess, onCameraError, {
       quality: 10,
       destinationType: Camera.DestinationType.FILE_URI

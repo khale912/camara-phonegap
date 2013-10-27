@@ -16,6 +16,11 @@
         //Then write an image tag out to the div using the
         //URL we received from the camera application. 
         ic.innerHTML = '<img src="' + imageURL + '" width="100%" />';
+		msg = document.getElementById('mensaje');
+		msg.innerHTML = '';
+		phBtn = document.getElementById('photoBtn');
+		phBtn.value = 'Retomar foto';
+		
       }
 
       function onCameraError(e) {

@@ -19,8 +19,8 @@
       <p>
         <input id="photoBtn" type="button" value="Toma una foto" onclick="takePhoto()"/>
         <div><img id="imageContainer" src="" width="100%" /></div>
-        <input id="latitude" type="text" placeholder="latitud">
-        <input id="longitude" type="text" placeholder="longitud">
+        <input id="latitude" type="text" placeholder="latitud" />
+        <input id="longitude" type="text" placeholder="longitud" />
         <input type="checkbox" name="license" id="license" class="custom" />
         <label for="license">Tiene licencia visible?</label>
         <div data-role="fieldcontain">
@@ -34,6 +34,7 @@
                   <label for="mallType">Centro comercial</label>
             </fieldset>
         </div>
+        <textarea id="comment" placeholder="comentarios adicionales"></textarea>
         <input id="sendBtn" type="button" value="Enviar" onclick="sendInfo()"/>
       </p>
     </div>

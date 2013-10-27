@@ -18,10 +18,10 @@
 
     var divBtnGoToForm = document.getElementById('btnGoToForm')
     divBtnGoToForm.innerHTML =  '<a href="#form" id="goToFormBtn" data-role="button" >Lista la foto</a>'
-    $('#goToFormBtn').button().button('refresh')
+    $('#goToFormBtn').button('refresh')
 
     document.getElementById('photoBtn').value = 'Retomar foto'
-    $('#photoBtn').button().button('refresh')
+    $('#photoBtn').button('refresh')
   }
 
   function checkImgData(){

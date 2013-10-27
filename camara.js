@@ -27,27 +27,6 @@ function onCameraError(e) {
   navigator.notification.alert("onCameraError: " + e)
 }
 
-function takePhoto1() {
-  navigator.camera.getPicture(onCameraSuccess1, onCameraError1, {
-    quality: 50,
-    destinationType: Camera.DestinationType.FILE_URI
-  })
-}
-
-function onCameraSuccess1(imageURL) {
-  console.log(imageURL)
-  ic = document.getElementById('imageContainer1');
-  ic.src = imageURL;
-
-  document.getElementById('photoBtn1').value = 'Retomar foto'
-  $("#photoBtn1").button('refresh')
-}
-
-function onCameraError1(e) {
-  console.log(e)
-  navigator.notification.alert("onCameraError: " + e)
-}
-
 function sendInfo() {
   if ($("#license").is(":checked")) {
     licenseBool = true

@@ -18,17 +18,6 @@ var urlForm = 'http://www.aktio.co/eltopo/register.php'
     ic = document.getElementById('image')
     ic.src = imageURI
 
-    var c = document.getElementById('canvas')
-    c.height = ic.clientHeight
-    c.width = ic.clientWidth
-    var ctx = c.getContext('2d')
-    ctx.drawImage(ic, 0, 0)
-    imageData = c.toDataURL()
-
-    ic.src = imageData
-
-    console.log(imageData)
-
     document.getElementById('photoBtn').value = 'Retomar foto'
     $('#photoBtn').button('refresh')
   }
@@ -53,6 +42,16 @@ var urlForm = 'http://www.aktio.co/eltopo/register.php'
     } else {
       type = 'no_type'
     }
+
+    var c = document.getElementById('canvas')
+    c.height = ic.clientHeight
+    c.width = ic.clientWidth
+    var ctx = c.getContext('2d')
+    ctx.drawImage(ic, 0, 0)
+    imageData = c.toDataURL()
+
+    console.log(imageData)
+
     var toSend = {
       'image': imageData,
       'position': {
@@ -63,7 +62,6 @@ var urlForm = 'http://www.aktio.co/eltopo/register.php'
       'type': type,
       'comment': document.getElementById('comment').value
     }
-    console.log(toSend)
 
     $.ajax({
       type: 'POST',

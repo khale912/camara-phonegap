@@ -14,7 +14,7 @@ function takePhoto() {
 }
 
 function onCameraSuccess(imageData) {
-  alert(imageData)
+  console.log(imageData)
   ic = document.getElementById('imageContainer');
   ic.src = "data:image/jpeg;base64," + imageData;
 

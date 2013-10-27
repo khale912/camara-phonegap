@@ -44,8 +44,8 @@ var urlForm = 'http://www.aktio.co/eltopo/register.php'
     }
 
     var c = document.getElementById('canvas')
-    c.height = ic.clientHeight
-    c.width = ic.clientWidth
+    c.height = ic.naturalHeight
+    c.width = ic.naturalWidth
     var ctx = c.getContext('2d')
     ctx.drawImage(ic, 0, 0)
     imageData = c.toDataURL()

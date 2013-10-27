@@ -8,14 +8,16 @@ var urlForm = "http://www.aktio.co/eltopo/register.php"
 
 function takePhoto() {
   navigator.camera.getPicture(onCameraSuccess, onCameraError, {
-    quality: 50
+    quality: 50,
+    destinationType: Camera.DestinationType.DATA_URL
   })
 }
 
 function onCameraSuccess(imageData) {
   alert(imageData)
-  ic = document.getElementById('imageContainer')
-  ic.src = "data:image/jpeg;base64," + imageData
+  ic = document.getElementById('imageContainer');
+  ic.src = "data:image/jpeg;base64," + imageData;
+
   document.getElementById('photoBtn').value = 'Retomar foto'
   $("#photoBtn").button('refresh')
 }

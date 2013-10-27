@@ -1,28 +1,42 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<title>Topo</title>
-<meta charset="utf-8">
-<meta name="viewport" id="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
-<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-<script type="text/javascript" charset="utf-8" src="camara.js"></script>
-<link href="jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
-<script src="jquery-1.6.4.min.js" type="text/javascript"></script>
-<script src="jquery.mobile-1.0.min.js" type="text/javascript"></script>
+  <title>Topo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" id="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+  <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+  <script type="text/javascript" charset="utf-8" src="camara.js"></script>
+  <link href="jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery-1.6.4.min.js" type="text/javascript"></script>
+  <script src="jquery.mobile-1.0.min.js" type="text/javascript"></script>
 </head>
 <body>
-<div data-role="page" id="page">
-  <div data-role="header">
-    <h1>Pero... y la foto?</h1>
+  <div data-role="page" id="page1">
+    <div data-role="header">
+      <h1>Pero... y la foto?</h1>
+    </div>
+    <div data-role="content">
+      <p>
+        <input id="photoBtn" type="button" value="Toma una foto" onclick="takePhoto()"/>
+        <div><img id="imageContainer" src="" width="100%" /></div>
+        <input id="latitude" type="text" placeholder="latitud">
+        <input id="longitude" type="text" placeholder="longitud">
+        <input type="checkbox" name="license" id="license" class="custom" />
+        <label for="license">Tiene licencia visible?</label>
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+              <legend>Tipo de construcción:</legend>
+                  <input type="radio" name="construction" id="homeType" value="choice-1" checked="checked" />
+                  <label for="homeType">Residencial</label>
+                  <input type="radio" name="construction" id="buildingType" value="choice-2" />
+                  <label for="buildingType">Edificio</label>
+                  <input type="radio" name="construction" id="mallType" value="choice-3" />
+                  <label for="mallType">Centro comercial</label>
+            </fieldset>
+        </div>
+        <input id="sendBtn" type="button" value="Enviar" onclick="sendInfo()"/>
+      </p>
+    </div>
   </div>
-  <div data-role="content">
-    <h3 id="mensaje">Envíanos una foto con la prueba.</h3>
-    <p>
-    <div id="imageContainer"></div>
-    <br />
-    <input id ="photoBtn" type="button" value="Toma una foto" onclick="takePhoto()"/>
-    </p>
-  </div>
-</div>
 </body>
 </html>
